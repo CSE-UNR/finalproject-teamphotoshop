@@ -4,6 +4,9 @@
 The goal of this project is to:
 1. Be the culmination of concepts learned throughout the entire semester
 2. Allow students to develop teamwork skills
+### Important Notes:
+1.	**Comments**: Header comments are required on all files and should include the names of all group members. Points will be deducted if no header comments are included.
+3.	**Filename**: Save your program as ```minesweeper.c```
 ## Program  
 Bombs away! We'll be building a minesweeper game for our final project. 
 
