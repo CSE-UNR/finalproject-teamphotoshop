@@ -8,7 +8,7 @@ The goal of this project is to:
 Bombs away! We'll be building a minesweeper game for our final project. 
 
 #### First Checkpoint
-The first checkpoint only requires basic game play functionality. Correct implementation of these features will earn a project grade of B. These features will be demonstrated to staff (and other students) during lab on 12/12.
+The first checkpoint only requires basic game play functionality. Correct implementation of these features will earn a project grade of B. The design document for the example executable at this checkpoint is provided. These features will be demonstrated to staff (and other students) during lab on 12/12.
 
 #### Second Checkpoint
 The second checkpoint includes basic game play functionality and the ability to save player scores. Correct implementation of these features will earn a project grade of A.   
