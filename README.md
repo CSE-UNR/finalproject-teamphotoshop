@@ -1,4 +1,4 @@
-# ProgrammingAssignment10 DESIGN
+# ProgrammingAssignment10
 
 ## Project Goals
 The goal of this project is to:
@@ -7,29 +7,46 @@ The goal of this project is to:
 ## Program  
 Bombs away! We'll be building a minesweeper game for our final project. 
 
-We will be breaking down the functionality of our game into multiple phases. The first checkpoint only requires basic game play functionality. Correct implementation of these features will earn a project grade of B. The second checkpoint and extra credit opportunities will be announced next week.
+#### First Checkpoint
+The first checkpoint only requires basic game play functionality. Correct implementation of these features will earn a project grade of B. These features will be demonstrated to staff (and other students) during lab on 12/12.
 
-You may clone this repository, but you cannot commit to it.
-
-### Requirements
-Create a design document detailing how you would break the problem down. Your document should include the data you will need to save and the algorithm for the game.  It should also list each function you plan to create: the input, output, and a description of how it will perform its task. An example Design Document is included in this repository.  
+#### Second Checkpoint
+The second checkpoint includes basic game play functionality and the ability to save player scores. Correct implementation of these features will earn a project grade of A.   
 
 ### Required Functionality
+A file stores player scores. These scores are displayed when the program starts and ends. A player gets a point for every game they win, they are added to the file after they decide not to play any more. 
+
 Your minesweeper game is required to allow the user to choose different cells to interact with. Users can mark that cell with a flag, if they think a bomb is in that cell. They can uncover that single cell to see what is there, or they can check all the cells surrounding their chosen cell. If the user uncovers a bomb, they lose. If one of the cells uncovered when they check surrounding cells is either an unmarked bomb or incorrectly marked as a bomb, they lose.
 
-When a user uncovers a cell, it either has a bomb in it, is blank, or has a number in it. Numbers tell the users how many bombs are in the surrounding cells. For example, if the number is ```2```, there are only two bombs in the surrounding cells. If the cell is blank, there are no bombs touching that cell. In traditional minesweeper play, if you uncover a blank cell when checking, a chain reaction will occur. For the first checkpoint, do not implement this feature (although you may want to consider how you could implement it later).
+When a user uncovers a cell, it either has a bomb in it, is blank, or has a number in it. Numbers tell the users how many bombs are in the surrounding cells. For example, if the number is ```2```, there are only two bombs in the surrounding cells. If the cell is blank, there are no bombs touching that cell. 
 
 Your minesweeper game will get the field layout from a file (an example file is included in this repository).
 
-You can see how a traditional minesweeper game by performing an internet search, but please not the differences between it and what's required as demonstrated by the executable:
-![image](https://user-images.githubusercontent.com/2504089/204570463-0a12c999-4c0d-4030-acec-85ea37a43d65.png)
+#### Extra Credit
+These features will not be considered for extra credit unless the required functionality is completely implemented:  
+1. Player scores are sorted from highest to lowest  
+2. If the player uncovers a blank cell when checking, a chain reaction will occur to uncover any touching blank cells  
+3. Random fields are generated within the game (not loaded from a file)  
+
 
 ### The example executable:
 An example executable is provided in this repository. You should be able to run it from your project folder.
-If you encounter a "permission denied" error when attempting to run the executable, type ```chmod u+x minesweeperExecutable``` into the terminal and try running the executable again.
+If you encounter a "permission denied" error when attempting to run the executable, type ```chmod u+x minesweeperAExecutable``` into the terminal and try running the executable again.
 
 ## Submission details
-To submit your project, upload a document to the assignment in WebCampus.  
+### It will be easier for one student to manage the repository. 
+To submit your project, you will have to use git on your VirtualBox installation:
+1.	After accepting the assignment invitation, copy the clone URL
+2.	Type 
+```git clone clone_URL```
+3.	cd into your new assignment directory
+4.	After working on your files
+5.	When you’re ready, type the following commands: 
+```
+git add .
+git commit -m “a descriptive message!”
+git push
+```
 
 ## Academic Honesty
 Academic dishonesty is against university as well as the system community standards. Academic dishonesty includes, but is not limited to, the following:
