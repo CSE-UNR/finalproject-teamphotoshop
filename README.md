@@ -5,8 +5,8 @@ The goal of this project is to:
 1. Familiarize students with the use of **Arrays of Strings**
 2. Be the culmination of concepts learned throughout the entire semester
 ### Important Notes:
-1.	**Comments**: Header comments are required on all files and should include the names of all group members. Points will be deducted if no header comments are included.
-3.	**Filename**: Save your program as ```songify.c```
+1.	**Comments**: Header comments are required on all files and recommended for the rest of the program. Points will be deducted if no header comments are included.
+2.	**Filename**: Save your program as ```songify.c```
 ## Program  
 It's a bop! Time to write our Songify App!  
 
