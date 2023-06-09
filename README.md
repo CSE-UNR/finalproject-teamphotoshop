@@ -37,8 +37,8 @@ In addition to the main function, there must be at least 4 additional functions.
 ![image](https://user-images.githubusercontent.com/2504089/235269869-d2693119-0344-47b1-970e-6dce0dc64908.png)
 
 
-### Extra Credit
-These features will not be considered for extra credit ***ONLY*** if the required functionality is completely implemented:  
+## Extra Credit
+### Features will **ONLY** be considered for extra credit if the required functionality is completely implemented.  
 1. (10%) The user can create and display multiple playlists  
 2. (20%) Any playlist the user creates will be saved and available to see the next time the user opens the app
 
