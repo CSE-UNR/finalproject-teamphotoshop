@@ -3,10 +3,12 @@
 ## Project Goals
 The goal of this project is to:
 1. Serve as a culmination of skills learned throughout the semester.
-### Important Notes:
+
+### Important Notes
 1.	**Formatting**: Make sure that you follow the precise recommendations for the output content and formatting. For your testing purposes, the autograder will be verifying your code compiles.
 2.	**Comments**: Header comments are required on all files and recommended for the rest of the program. Points will be deducted if no header comments are included.
 3.	**Filename**: Save your program as ```connect4.c```
+
 ## Program
 Time to connect all the concepts together!
 
@@ -15,7 +17,8 @@ Write a program that will allow the user to play a simplified version of Connect
 ### Game Play
 - A menu should be displayed which provides the user some options. The user may play a game, load an existing game (from a file), or exit the program.
 - If the user chooses to play the game, they should first be prompted to enter their name and their opponent’s name. Those names will be used during game play. The players are then informed which pieces represent them.
-- Each player should take turns making their moves until the game is won or ends in a tie. Then the user should be taken back to the menu. 
+- Each player should take turns making their moves until the game is won or ends in a tie. Then the user should be taken back to the menu.
+- A player should be alloweed to quit and save in the middle of a game. That will be the game loaded the next time the user chooses that option.
 
 ## Requirements
 -  A minimum of 5 functions must be included (I recommended more!)
@@ -24,7 +27,12 @@ Write a program that will allow the user to play a simplified version of Connect
 
 ### Extra Credit
 #### Features will **ONLY** be considered for extra credit if the required functionality is completely implemented.  
-(10%) Allow the user to quit and save in the middle of a game. That will be the game loaded the next time the user chooses that option.
+(10%) Add a scoring feature which  
+-  keeps track of the top 10 players and their scores, in order
+-  a player's "score" is determined by how many games in a row they have won
+  -  (each player will have a score after multiple games in row
+-  any player's score should be saved (in the correct order) when they quit if it's within the top 10
+  -  if there's already 10 scores, the lowest score is "deleted"
 
 ## Example Program Execution
 ### An example executable is provided in this repository.
@@ -35,7 +43,7 @@ into the terminal and try running the executable again.
 - There is alreday a file in the repository for a saved game.
 
 ## Submission details
-To submit your project, you should use git in your Linux environment:
+If you are usinng git from the command line, execute the following commands:
 1.	After accepting the assignment invitation, copy the clone URL
 2.	Type 
 ```git clone clone_URL```
