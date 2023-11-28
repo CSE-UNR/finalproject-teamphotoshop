@@ -34,14 +34,6 @@ Write a program that will allow the user to play a simplified version of Connect
 -  any player's score should be saved (in the correct order) when they quit if it's within the top 10
   -  if there's already 10 scores, the lowest score is "deleted"
 
-## Example Program Execution
-### An example executable is provided in this repository.
-- You should be able to run it from your project folder in a Linux environment. 
-- If you encounter a “permission denied” error when attempting to run the executable, type  
-```chmod u+x connect4Executable```  
-into the terminal and try running the executable again.
-- There is alreday a file in the repository for a saved game.
-
 ## Submission details
 If you are usinng git from the command line, execute the following commands:
 1.	After accepting the assignment invitation, copy the clone URL
