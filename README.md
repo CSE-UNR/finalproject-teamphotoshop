@@ -18,7 +18,7 @@ Write a program that will allow the user to play a simplified version of Connect
 - A menu should be displayed which provides the user some options. The user may play a game, load an existing game (from a file), or exit the program.
 - If the user chooses to play the game, they should first be prompted to enter their name and their opponent’s name. Those names will be used during game play. The players are then informed which pieces represent them.
 - Each player should take turns making their moves until the game is won or ends in a tie. Then the user should be taken back to the menu.
-- A player should be alloweed to quit and save in the middle of a game. That will be the game loaded the next time the user chooses that option.
+- A player should be allowed to quit and save in the middle of a game. That will be the game loaded the next time the user chooses that option.
 
 ## Requirements
 -  A minimum of 5 functions must be included (I recommended more!)
