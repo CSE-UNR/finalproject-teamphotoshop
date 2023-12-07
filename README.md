@@ -28,11 +28,11 @@ Write a program that will allow the user to play a simplified version of Connect
 ### Extra Credit
 #### Features will **ONLY** be considered for extra credit if the required functionality is completely implemented.  
 (10%) Add a scoring feature which  
--  keeps track of the top 10 players and their scores, in order
--  a player's "score" is determined by how many games in a row they have won
-  -  (each player will have a score after multiple games in row
--  any player's score should be saved (in the correct order) when they quit if it's within the top 10
-  -  if there's already 10 scores, the lowest score is "deleted"
+- keeps track of the top 10 players and their scores, in order
+- a player's "score" is determined by how many games in a row they have won
+  - each player will have a score after multiple games in row
+- any player's score should be saved (in the correct order) when they quit if it's within the top 10
+  - if there's already 10 scores, the lowest score is "deleted"
 
 ## Submission details
 If you are usinng git from the command line, execute the following commands:
