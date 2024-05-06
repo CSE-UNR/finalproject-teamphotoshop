@@ -1,11 +1,11 @@
-///Dylan Li, Dominico Domistefano
+///Dylan Li, Domenico DiStefano
 ///CS 135
-///Final Project image rotations
+///Final Project Erinstagram
 
 
 #include <stdio.h>
 
-#define MAX_SIZE 1000 // Maximum image size
+#define MAX_SIZE 100 // Maximum image size
 #define READ_FILENAME "in_data.txt"
 
 // function prototypes for loading, displaying, opening the editing menu, and doing the actual editing
@@ -21,20 +21,44 @@ void save_image(int image[MAX_SIZE][MAX_SIZE], int size);
 
 
 
-void load_image(int image[MAX_SIZE][MAX_SIZE], int *size, char filename[MAX_SIZE]) {
+void load_image(int image[MAX_SIZE][MAX_SIZE], int *size, char filename[]) {
     FILE* readFilePointer;
+    int rowCount, colCount, elementCount, rowArr[MAX_SIZE][MAX_SIZE];
+    rowCount = colCount = elementCount = 0;
     
     readFilePointer = fopen(filename, "r");
-    if(readFilePointer == NULL){
-    	printf("Cannot open image file");
+
+    if(readFilePointer != NULL){
+    	for(int i = 0; i< MAX_SIZE, MAX_SIZE; i++){
+    		while(fscanf(readFilePointer, "%d", &i) ==1){
+    			elementCount++;
+    		}
+    	}
     }
-    printf("%s", filename);
-    //int row = 5, int col = 5, int num;
-    //for(int i = 0; i < row; i++){
-    //	for(int j = 0; j < col; j++){
-    //		image[i][j] = num;
-    //	}
-    //}
+    fclose(readFilePointer);
+    
+    
+    readFilePointer = fopen(filename, "r");
+    if(readFilePointer != NULL){
+    
+    }
+    if(readFilePointer != NULL){
+    	printf("%s", filename);
+    	int row = 5;
+    	int col = 5;
+    	int num;
+    	for(int i = 0; i < row; i++){
+    		for(int j = 0; j < col; j++){
+    			image[i][j] = num;
+    			printf("%d", image[i][j]);
+    		}
+    		printf("\n");
+    	}
+    }
+    else{
+    	printf("ERROR");
+    }
+    
     fclose(readFilePointer);
     
 }
