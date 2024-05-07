@@ -108,15 +108,41 @@ void edit_image(int image[MAX_SIZE][MAX_SIZE], int size) {
 }
 
 void crop_image(int image[MAX_SIZE][MAX_SIZE], int *size) {
- 
+     int new_size, i, j;
+
+    printf("Enter new size: ");
+    scanf("%d", &new_size);
+
+    if (new_size > *size || new_size <= 0) {
+        printf("Invalid size.\n");
+        return;
+    }
+
+    *size = new_size;
 }
 
 void dim_image(int image[MAX_SIZE][MAX_SIZE], int size) {
-    
+        int i, j;
+
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            if (image[i][j] > 0) {
+                image[i][j]--;
+            }
+        }
+    }
 }
 
 void brighten_image(int image[MAX_SIZE][MAX_SIZE], int size) {
-   
+       int i, j;
+
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            if (image[i][j] < 4) {
+                image[i][j]++;
+            }
+        }
+    }
 }
 
 void rotate_image(int image[MAX_SIZE][MAX_SIZE], int *size) {
