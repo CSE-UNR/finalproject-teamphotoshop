@@ -145,11 +145,21 @@ void brighten_image(int image[MAX_SIZE][MAX_SIZE], int size) {
     }
 }
 
-void rotate_image(int image[MAX_SIZE][MAX_SIZE], int *size) {
-
-}
 
 void save_image(int image[MAX_SIZE][MAX_SIZE], int size) {
+     FILE *file;
+    char filename[100];
+    int i, j;
+
+    printf("Enter filename to save: ");
+    scanf("%s", filename);
+
+    file = fopen(filename, "w");
+    if (file == NULL) {
+        printf("Error creating file.\n");
+        return;
+    }
+
 }
 
 // main function, do while loop for da menu, case selection for each section, open respective function to respective option
