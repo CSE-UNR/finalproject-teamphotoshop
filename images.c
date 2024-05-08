@@ -12,13 +12,12 @@
 // standard for loops for dimming and brightening the image, 
 // thank god for functions bro
 void load_image(int *rowSize, int *colSize, int image[][MAX_SIZE], int *size, char filename[]);
-void display_image(int *rowSize, int *colSize, int image[][MAX_SIZE], int *size);
-void edit_image(int *size);
+void display_image(int *rowSize, int *colSize, int image[][MAX_SIZE]);
 void crop_image(int *size);
-void dim_image(int *size);
-void brighten_image(int *size);
+void dim_image(int *rowSize, int *colSize, int image[][MAX_SIZE]);
+void brighten_image(int *rowSize, int *colSize, int image[][MAX_SIZE]);
 void save_image(int *size);
-void rotate_image(int *size);
+
 
 
 
@@ -66,62 +65,35 @@ void load_image(int *rowSize, int *colSize, int image[][MAX_SIZE], int *size, ch
         printf("\nImage Loaded Successfully\n");
     } 
     else {
-        perror("Error opening file");
         printf("ERROR: Cannot open file.\n");
     }
     
 
 }
 
-void display_image(int *rowSize, int *colSize, int image[][MAX_SIZE], int *size) {
+void display_image(int *rowSize, int *colSize, int image[][MAX_SIZE]) {
 
     for (int i = 0; i < *rowSize; i++) {
     	for (int j = 0; j < *colSize; j++) {
-        	printf("%d ", image[i][j]);
+    		if(image[i][j] == 0){
+    			printf(" ");
+    		}
+    		else if(image[i][j] == 1){
+    			printf(".");
+    		}
+    		else if(image[i][j] == 2){
+    			printf("o");
+    		}
+    		else if(image[i][j] == 3){
+    			printf("O");
+    		}
+    		else if(image[i][j] == 4){
+    			printf("0");
+    		}
     	}
     	printf("\n");
     }
     printf("row: %d col:%d", *rowSize, *colSize);
-}
-
-void edit_image(int *size) {
-    int choice;
-
-//    do {
-//        printf("\nEdit Menu:\n");
-//        printf("1. Crop\n");
-//        printf("2. Dim\n");
-//        printf("3. Brighten\n");
-//        printf("4. Rotate 90 degrees\n");
-//        printf("5. Save edited image\n");
-//        printf("6. Back to main menu\n");
-//        printf("Enter your choice: ");
-//        scanf("%d", &choice);
-//
-//        switch (choice) {
-//            case 1:
-//                crop_image(image, size);
-//                display_image(image, size);
-//                break;
-//            case 2:
-//                dim_image(image, size);
-//                display_image(image, size);
-//                break;
-//            case 3:
-//                brighten_image(image, size);
-//                display_image(image, size);
-//                break;
-//            case 4:
-//                //rotate_image(image, &size);
-//                display_image(image, size);
-//                break;
-//            case 5:
-//                save_image(image, size);
-//                break;
-//            case 6:
-//                return;
-//        }
-//    } while (1);
 }
 
 void crop_image(int *size) {
@@ -138,49 +110,83 @@ void crop_image(int *size) {
 //    *size = new_size;
 }
 
-void dim_image(int *size) {
-//        int i, j;
-//
-//    for (i = 0; i < size; i++) {
-//        for (j = 0; j < size; j++) {
-//            if (image[i][j] > 0) {
-//                image[i][j]--;
-//            }
-//        }
-//    }
+void dim_image(int *rowSize, int *colSize, int image[][MAX_SIZE]) {
+    for (int i = 0; i < *rowSize; i++) {
+    	for (int j = 0; j < *colSize; j++) {
+    		if(image[i][j] == 0){
+    			printf(" ");
+    			image[i][j] = 0;
+    		}
+    		else if(image[i][j] == 1){
+    			printf(" ");
+    			image[i][j] = 0;
+    		}
+    		else if(image[i][j] == 2){
+    			printf(".");
+    			image[i][j] = 1;
+    		}
+    		else if(image[i][j] == 3){
+    			printf("o");
+    			image[i][j] = 2;
+    		}
+    		else if(image[i][j] == 4){
+    			printf("O");
+    			image[i][j] = 3;
+    		}
+    	}
+    	printf("\n");
+    }
+    printf("row: %d col:%d", *rowSize, *colSize);
 }
 
-void brighten_image(int *size) {
-//       int i, j;
-//
-//    for (i = 0; i < size; i++) {
-//        for (j = 0; j < size; j++) {
-//            if (image[i][j] < 4) {
-//                image[i][j]++;
-//            }
-//        }
-//    }
+void brighten_image(int *rowSize, int *colSize, int image[][MAX_SIZE]) {
+    for (int i = 0; i < *rowSize; i++) {
+    	for (int j = 0; j < *colSize; j++) {
+    		if(image[i][j] == 0){
+    			printf(".");
+    			image[i][j] = 1;
+    		}
+    		else if(image[i][j] == 1){
+    			printf("o");
+    			image[i][j] = 2;
+    		}
+    		else if(image[i][j] == 2){
+    			printf("O");
+    			image[i][j] = 3;
+    		}
+    		else if(image[i][j] == 3){
+    			printf("0");
+    			image[i][j] = 4;
+    		}
+    		else if(image[i][j] == 4){
+    			printf("0");
+    			image[i][j] = 5;
+    		}
+    	}
+    	printf("\n");
+    }
+    printf("row: %d col:%d", *rowSize, *colSize);
 }
 
 void save_image(int image[MAX_SIZE][MAX_SIZE], int size) {
-     FILE *file;
-    char filename[100];
-    int i, j;
+//     FILE *file;
+//    char filename[100];
+//    int i, j;
+//
+//    printf("Enter filename to save: ");
+//    scanf("%s", filename);
+//
+//    file = fopen(filename, "w");
+//    if (file == NULL) {
+//        printf("Error creating file.\n");
+//        return;
+//    }
+}
 
-    printf("Enter filename to save: ");
-    scanf("%s", filename);
-
-    file = fopen(filename, "w");
-    if (file == NULL) {
-        printf("Error creating file.\n");
-        return;
-    }
-
-
-
-// main function, do while loop for da menu, case selection for each section, open respective function to respective option
+// Main: Menu
 int main() {
     int image[MAX_SIZE][MAX_SIZE];
+    char imageDisplay[MAX_SIZE][MAX_SIZE];
     int size = 0;
     int choice;
     char filename[MAX_SIZE];
@@ -191,7 +197,9 @@ int main() {
         printf("\nMenu:\n");
         printf("1. Load a new image\n");
         printf("2. Display the current image\n");
-        printf("3. Edit the current image\n");
+	printf("3. Crop\n");
+        printf("4. Dim\n");
+        printf("5. Brighten\n");
         printf("0. Exit\n");
         printf("Enter your choice: ");
         scanf("%d%*c", &choice);
@@ -210,15 +218,27 @@ int main() {
                 load_image(&rowSize, &colSize, image, &size, filename);
                 break;
             case 2:
-                display_image(&rowSize, &colSize, image, &size);
+                display_image(&rowSize, &colSize, image);
+   //		dim_image(&rowSize, &colSize, image);
                 break;
             case 3:
-//                edit_image(image, size);
+//                crop_image(image, size);
+//                display_image(image, size);
+                break;
+            case 4:
+                dim_image(&rowSize, &colSize, image);
+//                display_image(image, size);
+		printf("nice choice\n");
+                break;
+            case 5:
+                brighten_image(&rowSize, &colSize, image);
+//                display_image(image, size);
                 break;
             default:
                 printf("Invalid choice. Please try again.\n");
-        }
-    } while (choice != 0);
+            }
+       } while (choice != 0);
 
+    
     return 0;
 }
