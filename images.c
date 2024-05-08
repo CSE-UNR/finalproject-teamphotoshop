@@ -13,10 +13,10 @@
 // thank god for functions bro
 void load_image(int *rowSize, int *colSize, int image[][MAX_SIZE], int *size, char filename[]);
 void display_image(int *rowSize, int *colSize, int image[][MAX_SIZE]);
-void crop_image(int *size);
+void crop_image(int *rowSize, int *colSize, int image[][MAX_SIZE]);
 void dim_image(int *rowSize, int *colSize, int image[][MAX_SIZE]);
 void brighten_image(int *rowSize, int *colSize, int image[][MAX_SIZE]);
-void save_image(int *size);
+void save_image(int *rowSize, int *colSize, int image[][MAX_SIZE]);
 
 
 
