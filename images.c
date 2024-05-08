@@ -96,18 +96,40 @@ void display_image(int *rowSize, int *colSize, int image[][MAX_SIZE]) {
     printf("row: %d col:%d", *rowSize, *colSize);
 }
 
-void crop_image(int *size) {
-//     int new_size, i, j;
-//
-//    printf("Enter new size: ");
-//    scanf("%d", &new_size);
-//
-//    if (new_size > *size || new_size <= 0) {
-//        printf("Invalid size.\n");
-//        return;
-//    }
+void crop_image(int *rowSize, int *colSize, int image[][MAX_SIZE]) {
+    int new_row_size, new_col_size;
+    int row_start, col_start, row_end, col_end;
 
-//    *size = new_size;
+    printf("enter starting row: ");
+    scanf("%d", &row_start);
+    printf("enter starting column: ");
+    scanf("%d", &col_start);
+    printf("enter ending row: ");
+    scanf("%d", &row_end);
+    printf("enter ending column: ");
+    scanf("%d", &col_end);
+
+    new_row_size = row_end - row_start + 1;
+    new_col_size = col_end - col_start + 1;
+
+    if (row_start < 0 || row_end >= *rowSize || col_start < 0 || col_end >= *colSize ||
+        new_row_size <= 0 || new_col_size <= 0) {
+        printf("Invalid crop parameters.\n");
+        return;
+    }
+
+    // Adjust the image array based on the cropping parameters
+    for (int i = 0; i < new_row_size; i++) {
+        for (int j = 0; j < new_col_size; j++) {
+            image[i][j] = image[i + row_start][j + col_start];
+        }
+    }
+
+    // Update the row and column sizes
+    *rowSize = new_row_size;
+    *colSize = new_col_size;
+
+    printf("Image cropped successfully.\n");
 }
 
 void dim_image(int *rowSize, int *colSize, int image[][MAX_SIZE]) {
@@ -168,19 +190,29 @@ void brighten_image(int *rowSize, int *colSize, int image[][MAX_SIZE]) {
     printf("row: %d col:%d", *rowSize, *colSize);
 }
 
-void save_image(int image[MAX_SIZE][MAX_SIZE], int size) {
-//     FILE *file;
-//    char filename[100];
-//    int i, j;
-//
-//    printf("Enter filename to save: ");
-//    scanf("%s", filename);
-//
-//    file = fopen(filename, "w");
-//    if (file == NULL) {
-//        printf("Error creating file.\n");
-//        return;
-//    }
+void save_image(int *rowSize, int *colSize, int image[][MAX_SIZE]) {
+    FILE *file;
+    char filename[100];
+
+    printf("Enter filename to save: ");
+    scanf("%s", filename);
+
+    file = fopen(filename, "w");
+    if (file == NULL) {
+        printf("Error creating file.\n");
+        return;
+    }
+
+    // Write the image data to the file
+    for (int i = 0; i < *rowSize; i++) {
+        for (int j = 0; j < *colSize; j++) {
+            fprintf(file, "%d", image[i][j]);
+        }
+        fprintf(file, "\n");
+    }
+
+    fclose(file);
+    printf("Image saved successfully.\n");
 }
 
 // Main: Menu
